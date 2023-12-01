@@ -1,10 +1,10 @@
 import "./Header.css"
 import logo from "./VR.jpg"
 
-const Header = () => {
+function Header() {
   return (
     <div className="Header">
-        <img className="imgLogo" src={logo} alt="logo vr" />    
+      <img className="imgLogo" src={logo} alt="logo vr" />
     </div>
   )
 }

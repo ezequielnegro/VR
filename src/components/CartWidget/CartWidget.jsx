@@ -1,10 +1,10 @@
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const CartWidget = () => {
+const CartWidget = ({buttonName}) => {
   return (
     <div>
-      <button className="bg-pink-300"><ShoppingCartIcon /> CARRITO (0) $0</button>
+      <button className="bg-pink-300"><ShoppingCartIcon />{buttonName}</button>
         
 
     </div>

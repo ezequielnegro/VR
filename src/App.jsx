@@ -1,15 +1,14 @@
 
 import './App.css'
 import Header from './components/Header/Header'
-import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-
+import Footer from './components/Footer/Footer'
 const App=() =>{
   return (
     <div>
       <Header />
-      <NavBar />
-      <ItemListContainer />
+      <ItemListContainer greeting={"hola mundo"} />
+      <Footer />
     </div>
   )
 }

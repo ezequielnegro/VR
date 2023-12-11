@@ -1,6 +1,7 @@
 import "./Header.css"
 import logo from "./VR.jpg"
 import CartWidget from "../CartWidget/CartWidget"
+import NavBar from "../NavBar/NavBar"
 
 const Header = () => {
   return (
@@ -8,13 +9,13 @@ const Header = () => {
       <div>  
       </div>
       <div>
-        <img className="imgLogo " src={logo} alt="logo vr" />
+        <img className="imgLogo" src={logo} alt="logo vr" />
       </div>
       <div className="">
-        <CartWidget />
+        <CartWidget buttonName={"carrito (0) $0"}/>
       </div>
-    </div>
+      <div className="col-span-3"><NavBar /></div>
+    </div>   
   )
 }
-
 export default Header

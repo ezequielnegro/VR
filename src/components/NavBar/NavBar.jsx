@@ -6,9 +6,9 @@ const NavBar = () => {
   return (
     <nav>
         <ul>
-            <li className=""><a href="/" className="">inicio</a></li>
-            <li>Productos</li>
-            <li>Contacto</li>
+            <li className=" hover:border-pink-300"><a href="/" className="">inicio</a></li>
+            <li className=" hover:border-pink-300">Productos</li>
+            <li className=" hover:border-pink-300">Contacto</li>
         </ul>
     </nav>
   )

@@ -1,16 +1,19 @@
+import "./App.css"
+import Header from "./components/Header/Header"
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import Footer from "./components/Footer/Footer"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
-import './App.css'
-import Header from './components/Header/Header'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import Footer from './components/Footer/Footer'
-const App=() =>{
+const App = () => {
   return (
-    <div>
+    <BrowserRouter>
       <Header />
-      <ItemListContainer greeting={"hola mundo"} />
+      <Routes>
+        <Route path="/" element={<ItemListContainer greeting={"hola mundo"} />}/>
+        <Route path="*" element={ <Navigate to={"/"}/>}/>
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   )
 }
-
 export default App

@@ -3,7 +3,7 @@
   return (
     
 <div>
-<input type="text" className="" placeholder="Buscar"/>
+<input type="text" className="rounded-md  outline-pink-400" placeholder="Buscar"/>
 </div>
     
   ) 

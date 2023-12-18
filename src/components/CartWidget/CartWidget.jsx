@@ -1,14 +1,14 @@
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
-const CartWidget = ({buttonName}) => {
+const CartWidget = ({ buttonName }) => {
   return (
-<>
-<button><ShoppingCartIcon />{buttonName}</button>
-</>
-      
-    
+    <>
+      <button>
+        <ShoppingCartIcon />
+        {buttonName}
+      </button>
+    </>
   )
 }
-
 export default CartWidget
+  

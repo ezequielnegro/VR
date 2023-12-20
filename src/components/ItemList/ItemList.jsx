@@ -1,18 +1,13 @@
+import ItemCard from "../ItemCard/ItemCard"
 
 
 const ItemList = ({productos}) => {
   return (
-    <section className="max-w-3xl flex flex-col"> 
-        <h2>Productos</h2>
+    <section className="max-w-3xl mx-auto flex flex-col justify-center"> 
+        <h2 className="text-center uppercase text-xl">Productos</h2>
         <hr />
-        <div className="flex flex-wrap gap-4 content-around justify-around max-w-3xl">
-        {productos.map((item) => (
-        <article key={item.id}>
-            <img  className="w-32 h-32" src={item.images[0]} alt={item.name} />
-            <h3 className="uppercase w-32">{item.name}</h3>
-            <p>Precio: {item.price}</p>
-        </article> 
-        ))}
+        <div className="flex justify-center flex-wrap gap-4 content-around max-w-3xl">
+        {productos.map((item) => <ItemCard key={item.id} item={item}/>)}
         </div>
 
 
@@ -21,3 +16,5 @@ const ItemList = ({productos}) => {
 }
 
 export default ItemList
+
+

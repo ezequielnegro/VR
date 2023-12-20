@@ -60,8 +60,7 @@
                 "/images/yoko-suela/yoko-suela-1.webp",
                 "/images/yoko-suela/yoko-suela-2.webp",
                 "/images/yoko-suela/yoko-suela-3.webp",
-                "/images/yoko-suela/yoko-suela-4.webp",
-                "/images/yoko-suela/yoko-suela-5.webp"
+                "/images/yoko-suela/yoko-suela-4.webp"
             ],
             category:"cartera",
             subcategory:"clasica",

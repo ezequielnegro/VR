@@ -9,7 +9,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<ItemListContainer greeting={"hola mundo"} />}/>
+        <Route path="/" element={<ItemListContainer/>}/>
         <Route path="*" element={ <Navigate to={"/"}/>}/>
       </Routes>
       <Footer />

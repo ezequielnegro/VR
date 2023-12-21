@@ -1,4 +1,5 @@
 import "./NavBar.css"
+import { Link } from "react-router-dom"
 
 
 
@@ -6,9 +7,9 @@ const NavBar = () => {
   return (
     <nav>
         <ul>
-            <li className=" hover:border-pink-300"><a href="/" className="">inicio</a></li>
-            <li className=" hover:border-pink-300"><a href="/products" className="">productos</a></li>
-            <li className=" hover:border-pink-300">Contacto</li>
+            <li className=" hover:border-pink-300"><Link to={"/"} className="">inicio</Link></li>
+            <li className=" hover:border-pink-300"><Link to={"/products"} className="">productos</Link></li>
+            <li className=" hover:border-pink-300"><Link to={"/contact"} className="">Contacto</Link></li>
         </ul>
     </nav>
   )

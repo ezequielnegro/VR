@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import { useState, useEffect } from "react"
 import { pedirDatos } from "../../utils/utils"
 import ItemList from "../ItemList/ItemList"

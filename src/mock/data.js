@@ -4,14 +4,13 @@
           id: 1,
           name: "cartera frida clásica - platino",
           price: 3790,
-          images: [
-            "/images/frida-platino/frida-platino-1.webp",
-            "/images/frida-platino/frida-platino-2.webp",
-            "/images/frida-platino/frida-platino-3.webp",
-            "/images/frida-platino/frida-platino-4.webp",
-            "/images/frida-platino/frida-platino-5.webp"
-          ],
-      
+          frontImage: "/images/frida-platino/frida-platino-2.webp",
+           images:[
+          "/images/frida-platino/frida-platino-1.webp",
+          "/images/frida-platino/frida-platino-3.webp",
+          "/images/frida-platino/frida-platino-4.webp",
+          "/images/frida-platino/frida-platino-5.webp"
+           ],     
           category: "cartera",
           subcategory: "clasica",
           stock: 1,
@@ -23,8 +22,8 @@
           id: 2,
           name: "cartera yoko clásica - negra",
           price: 3190,
-          images: [
-            "/images/yoko-negra/yoko-negra-1.webp",
+          frontImage: "/images/yoko-negra/yoko-negra-1.webp",
+          images:[
             "/images/yoko-negra/yoko-negra-2.webp",
             "/images/yoko-negra/yoko-negra-3.webp",
             "/images/yoko-negra/yoko-negra-4.webp",
@@ -42,8 +41,8 @@
           id: 3,
           name: "cartera yoko clásica - celeste",
           price: 3190,
+          frontImage:"/images/yoko-celeste/yoko-celeste-1.webp",
           images: [
-            "/images/yoko-celeste/yoko-celeste-1.webp",
             "/images/yoko-celeste/yoko-celeste-2.webp",
             "/images/yoko-celeste/yoko-celeste-3.webp",
             "/images/yoko-celeste/yoko-celeste-4.webp"
@@ -59,8 +58,8 @@
           id: 4,
           name: "cartera yoko clásica - suela",
           price: 3190,
-          images: [
-            "/images/yoko-suela/yoko-suela-1.webp",
+          frontImage: "/images/yoko-suela/yoko-suela-1.webp",
+          images: [     
             "/images/yoko-suela/yoko-suela-2.webp",
             "/images/yoko-suela/yoko-suela-3.webp",
             "/images/yoko-suela/yoko-suela-4.webp"
@@ -76,8 +75,8 @@
           id: 5,
           name: "cartera yoko clásica - amarillo",
           price: 3190,
+          frontImage:"/images/yoko-amarillo/yoko-amarillo-1.webp",
           images: [
-            "/images/yoko-amarillo/yoko-amarillo-1.webp",
             "/images/yoko-amarillo/yoko-amarillo-2.webp",
             "/images/yoko-amarillo/yoko-amarillo-3.webp",
             "/images/yoko-amarillo/yoko-amarillo-4.webp",
@@ -95,9 +94,9 @@
           id: 6,
           name: "cartera frida clásica - negro",
           price: 3790,
+          frontImage:"/images/frida-negro/frida-negro-2.webp",
           images: [
             "/images/frida-negro/frida-negro-1.webp",
-            "/images/frida-negro/frida-negro-2.webp",
             "/images/frida-negro/frida-negro-3.webp",
             "/images/frida-negro/frida-negro-4.webp",
             "/images/frida-negro/frida-negro-5.webp"
@@ -114,8 +113,8 @@
           id: 7,
           name: "cartera frida clásica - rose",
           price: 3790,
+          frontImage: "/images/frida-rose/frida-rose-1.webp",
           images: [
-            "/images/frida-rose/frida-rose-1.webp",
             "/images/frida-rose/frida-rose-2.webp",
             "/images/frida-rose/frida-rose-3.webp",
             "/images/frida-rose/frida-rose-4.webp",
@@ -133,8 +132,9 @@
           id: 8,
           name: "cartera nina clásica - fucsia",
           price: 4190,
+          frontImage: "/images/nina-fucsia/nina-fucsia-1.webp",
           images: [
-            "/images/nina-fucsia/nina-fucsia-1.webp",
+           
             "/images/nina-fucsia/nina-fucsia-2.webp",
             "/images/nina-fucsia/nina-fucsia-3.webp",
             "/images/nina-fucsia/nina-fucsia-4.webp",
@@ -151,10 +151,9 @@
           id: 9,
           name: "cartera nina clásica - negro",
           price: 4190,
+          frontImage:"/images/nina-negro/nina-negro-2.webp",
           images: [
             "/images/nina-negro/nina-negro-1.webp",
-            "/images/nina-negro/nina-negro-2.webp",
-            "/images/nina-negro/nina-negro-3.webp",
             "/images/nina-negro/nina-negro-3.webp"
           ],
           category: "cartera",
@@ -168,8 +167,8 @@
           id: 10,
           name: "cartera nina clásica - natural",
           price: 4190,
+          frontImage: "/images/nina-natural/nina-natural-1.webp",
           images: [
-            "/images/nina-natural/nina-natural-1.webp",
             "/images/nina-natural/nina-natural-2.webp",
             "/images/nina-natural/nina-natural-3.webp"
           ],
@@ -184,9 +183,9 @@
           id: 11,
           name: "cartera rina - fucsia",
           price: 1790,
+          frontImage:"/images/rina-fucsia/rina-fucsia-2.webp",
           images: [
             "/images/rina-fucsia/rina-fucsia-1.webp",
-            "/images/rina-fucsia/rina-fucsia-2.webp",
             "/images/rina-fucsia/rina-fucsia-3.webp",
             "/images/rina-fucsia/rina-fucsia-4.webp"
           ],
@@ -202,8 +201,8 @@
           id: 12,
           name: "cartera rina - suela",
           price: 1790,
+          frontImage:"/images/rina-suela/rina-suela-1.webp",
           images: [
-            "/images/rina-suela/rina-suela-1.webp",
             "/images/rina-suela/rina-suela-2.webp",
             "/images/rina-suela/rina-suela-3.webp",
             "/images/rina-suela/rina-suela-4.webp"
@@ -220,8 +219,8 @@
           id: 13,
           name: "cartera ryka - fucsia",
           price: 1590,
+          frontImage:"/images/ryka-fucsia/ryka-fucsia-1.webp",
           images: [
-            "/images/ryka-fucsia/ryka-fucsia-1.webp",
             "/images/ryka-fucsia/ryka-fucsia-2.webp"
           ],
           category: "cartera",
@@ -235,8 +234,8 @@
           id: 14,
           name: "cartera ryka - natural",
           price: 1590,
+          frontImage:  "/images/ryka-natural/ryka-natural-1.webp",
           images: [
-            "/images/ryka-natural/ryka-natural-1.webp",
             "/images/ryka-natural/ryka-natural-2.webp",
             "/images/ryka-natural/ryka-natural-3.webp"
           ],
@@ -251,9 +250,9 @@
           id: 15,
           name: "maxi billetera sicilia - blanca",
           price: 1560,
+          frontImage:"/images/sicilia-blanca/sicilia-blanca-2.webp",
           images: [
-            "/images/sicilia-blanca/sicilia-blanca-1.webp",
-            "/images/sicilia-blanca/sicilia-blanca-2.webp"
+            "/images/sicilia-blanca/sicilia-blanca-1.webp"            
           ],
           category: "billetera",
           subcategory: "",
@@ -266,9 +265,10 @@
           id: 16,
           name: "maxi billetera sicilia - negra",
           price: 1560,
+          frontImage:"/images/sicilia-negra/sicilia-negra-2.webp",
           images: [
-            "/images/sicilia-negra/sicilia-negra-1.webp",
-            "/images/sicilia-negra/sicilia-negra-2.webp"
+            "/images/sicilia-negra/sicilia-negra-1.webp"
+            
           ],
           category: "billetera",
           subcategory: "",
@@ -281,8 +281,8 @@
           id: 17,
           name: "maxi billetera ojales - negra",
           price: 1090,
+          frontImage:"/images/ojales-negra/ojales-negra-1.webp",
           images: [
-            "/images/ojales-negra/ojales-negra-1.webp",
             "/images/ojales-negra/ojales-negra-2.webp",
             "/images/ojales-negra/ojales-negra-3.webp",
             "/images/ojales-negra/ojales-negra-4.webp"
@@ -298,8 +298,8 @@
           id: 18,
           name: "maxi billetera ojales - rosa",
           price: 1090,
+          frontImage: "/images/ojales-rosa/ojales-rosa-1.webp",
           images: [
-            "/images/ojales-rosa/ojales-rosa-1.webp",
             "/images/ojales-rosa/ojales-rosa-2.webp",
             "/images/ojales-rosa/ojales-rosa-3.webp"
           ],

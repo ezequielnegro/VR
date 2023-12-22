@@ -5,11 +5,11 @@ import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
-    <nav>
-        <ul>
-            <li className=" hover:border-pink-300"><Link to={"/"} className="">inicio</Link></li>
-            <li className=" hover:border-pink-300"><Link to={"/products"} className="">productos</Link></li>
-            <li className=" hover:border-pink-300"><Link to={"/contact"} className="">Contacto</Link></li>
+    <nav className="navbar-nav">
+        <ul className="navbar-ul">
+            <li className=" hover:border-pink-300 navbar-li"><Link to={"/"} className="">inicio</Link></li>
+            <li className=" hover:border-pink-300 navbar-li"><Link to={"/products"} className="">productos</Link></li>
+            <li className=" hover:border-pink-300 navbar-li"><Link to={"/contact"} className="">Contacto</Link></li>
         </ul>
     </nav>
   )

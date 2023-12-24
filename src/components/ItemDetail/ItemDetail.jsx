@@ -1,6 +1,18 @@
 import SideBar from "../SideBar/SideBar"
-
+import { useState } from "react"
 const ItemDetail = ({ item }) => {
+
+const[cantidad,setCantidad] = useState(1)
+
+const handleSumar = () => {
+  cantidad < item.stock && setCantidad(cantidad + 1)
+}
+ 
+const handleRestar = () => {
+  cantidad > 1 && setCantidad(cantidad - 1)
+}
+
+
   return (
     <main className="m-10">
       <section className="flex justify-center gap-4">
@@ -21,6 +33,14 @@ const ItemDetail = ({ item }) => {
             ${item.price}
           </h3>
           <p className="my-8">10% de descuento con transferencia bancaria</p>
+          
+          <div>
+            <button onClick={handleRestar}>-</button>
+             <span>{cantidad}</span>
+            <button onClick={handleSumar}>+</button>
+
+          </div>
+
           <button
             type="button"
             className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"

@@ -3,18 +3,21 @@ import { Link } from "react-router-dom"
 
 const ItemCard = ({ item }) => {
   return (
-    <article>
+    <article className="flex flex-col items-center">
       <Link to={`/Item/${item.id}`}>
-        <img className="w-40 h-40" src={item.frontImage} alt={item.name} />
+        <img className="w-40 h-36 object-cover hover:scale-105" src={item.frontImage} alt={item.name} />
       </Link>
+      <div className="h-10">
       <h3 className="uppercase w-40">
-        <Link className="text-sm font-bold" to={`/Item/${item.id}`}>
-          {item.name}
+        <Link className="text-sm font-semibold" to={`/Item/${item.id}`}>
+          <p className="text-center">{item.name}</p>
         </Link>
       </h3>
+      </div>
+     
       <p className="font-light">${item.price}</p>
       <ButtonCard>
-        <Link to={`/Item/${item.id}`}>Agregar al Carrito</Link>
+        <Link to={`/Item/${item.id}`}>Ver mas...</Link>
       </ButtonCard>
     </article>
   )

@@ -1,10 +1,11 @@
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
+import { FaCartShopping } from "react-icons/fa6";
+
 
 const CartWidget = ({ buttonName }) => {
   return (
     <>
-      <button>
-        <ShoppingCartIcon />
+      <button className="flex">
+      <FaCartShopping />
         {buttonName}
       </button>
     </>

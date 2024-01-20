@@ -1,17 +1,24 @@
 import SideBar from "../SideBar/SideBar"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import QuantitySelector from "./QuantitySelector"
+import { CartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
+
 const ItemDetail = ({ item }) => {
+  const [cantidad, setCantidad] = useState(1)
+  const { addToCart, isInCart } = useContext(CartContext)
 
-const[cantidad,setCantidad] = useState(1)
-
-const handleSumar = () => {
-  cantidad < item.stock && setCantidad(cantidad + 1)
-}
- 
-const handleRestar = () => {
-  cantidad > 1 && setCantidad(cantidad - 1)
-}
-
+  const handleAgregar = () => {
+    const itemToCart = {
+      ...item,
+      cantidad,
+    };
+    addToCart(itemToCart);
+    // const newCart = cart.slice()
+    // newCart.push(itemToCart)
+    //  setCart(newCart)
+    // setCart([...cart, itemToCart])
+  };
 
   return (
     <main className="m-10">
@@ -20,7 +27,11 @@ const handleRestar = () => {
           <SideBar />
         </div>
         <div className="">
-          <img src={item.frontImage} alt={item.name} className="w-96 h-96 object-cover hover:scale-150" />
+          <img
+            src={item.frontImage}
+            alt={item.name}
+            className="w-96 h-96 object-cover hover:scale-150"
+          />
           <p className="text-medium w-96 my-8">
             {item.description}
             <br />
@@ -33,20 +44,31 @@ const handleRestar = () => {
             ${item.price}
           </h3>
           <p className="my-8">10% de descuento con transferencia bancaria</p>
-          
-          <div>
-            <button onClick={handleRestar}>-</button>
-             <span>{cantidad}</span>
-            <button onClick={handleSumar}>+</button>
+          {isInCart(item.id) ? (
+            <button
+              type="button"
+              className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"
+            >
+              
+              <Link to="/cart">Terminar Compra</Link>
+            </button>
+          ) : (
+            <>
+              <QuantitySelector
+                cantidad={cantidad}
+                stock={item.stock}
+                setCantidad={setCantidad}
+              />
 
-          </div>
-
-          <button
-            type="button"
-            className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"
-          >
-            comprar
-          </button>
+              <button
+                type="button"
+                className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"
+                onClick={handleAgregar}
+              >
+                Agregar al Carrito
+              </button>
+            </>
+          )}
         </div>
       </section>
     </main>

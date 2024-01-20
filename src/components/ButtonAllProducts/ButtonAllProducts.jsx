@@ -12,4 +12,4 @@ const ButtonAllProducts = () => {
   )
 }
 
-export default ButtonAllProducts;
+export default ButtonAllProducts

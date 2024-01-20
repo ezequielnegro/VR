@@ -13,7 +13,7 @@
            ],     
           category: "cartera",
           subcategory: "clasica",
-          stock: 1,
+          stock: 0,
           description:
             "Cartera shopping bag confeccionada en cuero Flouter color platino metalizado, y correas, base, vistas internas y detalles en cuero color negro. Para cerrar la cartera: en el centro broche imán y en los laterales mosqueton.",
           measures: "Ancho: 35 cm - Alto: 35 cm - Profundidad:  12 cm",

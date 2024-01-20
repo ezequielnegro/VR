@@ -60,12 +60,17 @@ const ItemDetail = ({ item }) => {
                 setCantidad={setCantidad}
               />
 
-              <button
-                type="button"
-                className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"
+              <button  type="button" 
+              className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"
+               
                 onClick={handleAgregar}
-              >
-                Agregar al Carrito
+              
+              >{item.stock===0 ? 'No hay Stock'  : 
+                                 'Agregar al Carrito' }
+            
+              
+               
+                
               </button>
             </>
           )}

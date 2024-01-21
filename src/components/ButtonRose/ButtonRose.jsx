@@ -7,7 +7,7 @@ const ButtonRose = ({
   return (
     <button
       type="button"
-      className= {`bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500 ${className}`} 
+      className= {`bg-pink-300  uppercase text-lg font-normal hover:font-semibold h-12 my-8 rounded shadow-lg shadow-pink-500 ${className}`} 
       onClick={onClick}
       disabled={disabled}
     >

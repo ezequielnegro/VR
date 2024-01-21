@@ -60,7 +60,7 @@ const ItemDetail = ({ item }) => {
                 setCantidad={setCantidad}
               />
               <ButtonRose
-                className={`${item.stock === 0 ? `cursor-not-allowed bg-gray-500 shadow-none` : ``} `}
+                className={`${item.stock === 0 ? `w-64 cursor-not-allowed shadow-none bg-gray-500` : `w-64`} `}
                 onClick={handleAgregar}
                 disabled={item.stock === 0}
               >

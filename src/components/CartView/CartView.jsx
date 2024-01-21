@@ -4,6 +4,7 @@ import EmptyCart from "./EmptyCart"
 import { FaAngleLeft, FaRegTrashCan } from "react-icons/fa6"
 import { Link } from "react-router-dom"
 import ButtonRose from "../ButtonRose/ButtonRose"
+import { Tooltip } from 'react-tooltip'
 
 const CartView = () => {
   const { cart, removeItem, clearCart } = useContext(CartContext)
@@ -25,7 +26,7 @@ const CartView = () => {
             Seguir Comprando
           </Link>
           <hr />
-          <ButtonRose onClick={clearCart}>Vaciar Carrito</ButtonRose>
+          <ButtonRose onClick={clearCart} className="w-64">Vaciar Carrito</ButtonRose>
         </div>
         <ul>
           {cart.map((item) => (
@@ -40,7 +41,10 @@ const CartView = () => {
                 <p> $ {item.price}</p>
                 <p>cantidad:{item.cantidad}</p>
                 <button onClick={() => removeItem(item.id)}>
-                  {<FaRegTrashCan />}
+                  {<FaRegTrashCan data-tooltip-id="trash"/>}
+                  <Tooltip id="trash"
+                  place="right"
+                  content="Eliminar"/>
                 </button>
               </div>
             </li>

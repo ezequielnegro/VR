@@ -8,6 +8,10 @@ import { Link} from "react-router-dom"
 
 const Header = () => {
   const {itemsInCart, priceCart} = useContext(CartContext)
+  let arsPe = new Intl.NumberFormat('sp-AR', {
+    style: 'currency',
+    currency: 'ARS',
+})
   return (
     <div className="grid grid-cols-3 gap-3 place-items-center">
       <SearchBox/>
@@ -16,7 +20,7 @@ const Header = () => {
       </div>
       <div className="px-10 py-0.5 bg-pink-200 hover:bg-pink-300">
      
-        <CartWidget buttonName={`Carrito (${itemsInCart()}) $${priceCart()}`} />
+        <CartWidget buttonName={`Carrito (${itemsInCart()}) ${arsPe.format(priceCart())}`} />
       </div>
       <div className="col-span-3">
         <NavBar />

@@ -1,5 +1,6 @@
 import { MOCK_DATA } from "../mock/data"
 
+
 export const pedirDatos = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -7,3 +8,5 @@ export const pedirDatos = () => {
       }, 500)
     })
   }
+  
+

@@ -1,15 +1,15 @@
 export const links = [
 {
 label:"carteras clásicas",
-href:"/products/clasica"
+href:"/products/cartera/clasica"
 },
 {
     label:"carteras vintage",
-    href:"/products/vintage"
+    href:"/products/cartera/vintage"
     },
     {
         label:"billeteras",
-        href:"/products/billetera"
+        href:"/products/billetera/billetera"
         }
 
 ]

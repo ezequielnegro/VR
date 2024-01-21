@@ -2,6 +2,12 @@ import { ButtonCard } from "../ButtonCard/ButtonCard"
 import { Link } from "react-router-dom"
 
 const ItemCard = ({ item }) => {
+
+  let arsPe = new Intl.NumberFormat('sp-AR', {
+    style: 'currency',
+    currency: 'ARS',
+})
+  
   return (
     <article className="flex flex-col items-center">
       <Link to={`/Item/${item.id}`}>
@@ -18,7 +24,7 @@ const ItemCard = ({ item }) => {
           </Link>
         </h3>
       </div>
-      <p className="font-light">${item.price}</p>
+      <p className="font-light">{arsPe.format(item.price)}</p>
       <ButtonCard>
         <Link to={`/Item/${item.id}`}>
           {item.stock === 0 ? "Sin Stock" : "Ver mas..."}

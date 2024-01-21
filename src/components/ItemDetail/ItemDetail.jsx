@@ -21,6 +21,10 @@ const ItemDetail = ({ item }) => {
     // setCart([...cart, itemToCart])
   };
 
+  let arsPe = new Intl.NumberFormat('sp-AR', {
+    style: 'currency',
+    currency: 'ARS',
+})  
   return (
     <main className="m-10">
       <section className="flex justify-center gap-4">
@@ -42,7 +46,7 @@ const ItemDetail = ({ item }) => {
         <div>
           <h2 className="my-8 uppercase font-semibold text-2xl">{item.name}</h2>
           <h3 className="my-8 uppercase font-semibold text-4xl">
-            ${item.price}
+          {arsPe.format(item.price)}
           </h3>
           <p className="my-8">10% de descuento con transferencia bancaria</p>
           {isInCart(item.id) ? (

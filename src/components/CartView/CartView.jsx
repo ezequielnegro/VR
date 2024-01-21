@@ -13,6 +13,10 @@ const CartView = () => {
     return <EmptyCart />
   }
 
+  let arsPe = new Intl.NumberFormat('sp-AR', {
+    style: 'currency',
+    currency: 'ARS',
+})
   return (
     <section>
       <div className="flex justify-center gap-4">
@@ -38,7 +42,7 @@ const CartView = () => {
               />
               <div className=" max-w-3xl border-t-2 border-pink-100 py-4">
                 <h3>{item.name}</h3>
-                <p> $ {item.price}</p>
+                <p> {arsPe.format(item.price)}</p>
                 <p>cantidad:{item.cantidad}</p>
                 <button onClick={() => removeItem(item.id)}>
                   {<FaRegTrashCan data-tooltip-id="trash"/>}

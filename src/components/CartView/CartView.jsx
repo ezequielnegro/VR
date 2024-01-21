@@ -3,9 +3,10 @@ import { CartContext } from "../../context/CartContext"
 import EmptyCart from "./EmptyCart"
 import { FaAngleLeft, FaRegTrashCan } from "react-icons/fa6"
 import { Link } from "react-router-dom"
+import ButtonRose from "../ButtonRose/ButtonRose"
 
 const CartView = () => {
-  const { cart,removeItem } = useContext(CartContext)
+  const { cart, removeItem, clearCart } = useContext(CartContext)
 
   if (cart.length == 0) {
     return <EmptyCart />
@@ -19,8 +20,12 @@ const CartView = () => {
             Carrito de compras
           </h2>
           <hr />
-          <Link to="/Products">{<FaAngleLeft/>}          
-          Seguir Comprando</Link>
+          <Link to="/Products">
+            {<FaAngleLeft />}
+            Seguir Comprando
+          </Link>
+          <hr />
+          <ButtonRose onClick={clearCart}>Vaciar Carrito</ButtonRose>
         </div>
         <ul>
           {cart.map((item) => (
@@ -34,16 +39,16 @@ const CartView = () => {
                 <h3>{item.name}</h3>
                 <p> $ {item.price}</p>
                 <p>cantidad:{item.cantidad}</p>
-                <button onClick={() => removeItem(item.id)}> {<FaRegTrashCan/>} </button>
+                <button onClick={() => removeItem(item.id)}>
+                  {<FaRegTrashCan />}
+                </button>
               </div>
-
             </li>
           ))}
         </ul>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default CartView
-

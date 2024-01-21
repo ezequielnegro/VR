@@ -1,4 +1,5 @@
-
+import { FaPlus,FaMinus } from "react-icons/fa6"
+import ButtonRose from "../ButtonRose/ButtonRose"
 
 const QuantitySelector = ({cantidad, stock , setCantidad}) => {
 
@@ -17,10 +18,12 @@ const QuantitySelector = ({cantidad, stock , setCantidad}) => {
       
       stock === 0
     ? <p>Sin Stock</p>
-    : <div>
-    <button onClick={handleRestar}>-</button>
-    <span>{cantidad}</span>
-    <button onClick={handleSumar}>+</button>
+    : <div className="flex justify-start items-center">
+    <ButtonRose 
+    className={`w-12 my-0 flex justify-center items-center`}
+    onClick={handleRestar}>{<FaMinus className="text-3xl"/>}</ButtonRose>
+    <p className="text-3xl w-12 text-center">{cantidad}</p>
+    <ButtonRose  className={`w-12 my-0 flex justify-center items-center`} onClick={handleSumar}>{<FaPlus className="text-3xl"/>}</ButtonRose>
     </div> 
   }
     </>

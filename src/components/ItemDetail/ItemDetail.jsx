@@ -3,6 +3,7 @@ import { useContext, useState } from "react"
 import QuantitySelector from "./QuantitySelector"
 import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
+import ButtonRose from "../ButtonRose/ButtonRose"
 
 const ItemDetail = ({ item }) => {
   const [cantidad, setCantidad] = useState(1)
@@ -49,7 +50,6 @@ const ItemDetail = ({ item }) => {
               type="button"
               className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"
             >
-              
               <Link to="/cart">Terminar Compra</Link>
             </button>
           ) : (
@@ -59,19 +59,13 @@ const ItemDetail = ({ item }) => {
                 stock={item.stock}
                 setCantidad={setCantidad}
               />
-
-              <button  type="button" 
-              className="bg-pink-300  uppercase text-lg font-normal hover:font-semibold w-64 h-12 my-8 rounded shadow-lg shadow-pink-500"
-               
+              <ButtonRose
+                className={`${item.stock === 0 ? `cursor-not-allowed bg-gray-500 shadow-none` : ``} `}
                 onClick={handleAgregar}
-              
-              >{item.stock===0 ? 'No hay Stock'  : 
-                                 'Agregar al Carrito' }
-            
-              
-               
-                
-              </button>
+                disabled={item.stock === 0}
+              >
+                {item.stock === 0 ? "No hay Stock" : "Agregar al Carrito"}
+              </ButtonRose>
             </>
           )}
         </div>

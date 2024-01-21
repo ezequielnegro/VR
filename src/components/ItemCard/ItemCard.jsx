@@ -20,10 +20,11 @@ const ItemCard = ({ item }) => {
       </div>
       <p className="font-light">${item.price}</p>
       <ButtonCard>
-        <Link to={`/Item/${item.id}`}>Ver mas...</Link>
+        <Link to={`/Item/${item.id}`}>
+          {item.stock === 0 ? "Sin Stock" : "Ver mas..."}
+        </Link>
       </ButtonCard>
     </article>
-  )
-}
-
+  );
+};
 export default ItemCard

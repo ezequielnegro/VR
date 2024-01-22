@@ -26,19 +26,19 @@ const FormContactPage = () => {
       />
       <input
         type="text"
-        className="bg-pink-100bg-pink-100 border-2 border-pink-400"
+        className="bg-pink-100  border-2 border-pink-400"
         placeholder="Apellido"
         {...register("Apellido", { required: true, maxLength: 100 })}
       />
       <input
         type="text"
-        className="bg-pink-100bg-pink-100 border-2 border-pink-400"
+        className="bg-pink-100  border-2 border-pink-400"
         placeholder="Email"
         {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
       />
       <input
         type="tel"
-        className="bg-pink-100bg-pink-100 border-2 border-pink-400"
+        className="bg-pink-100 border-2 border-pink-400"
         placeholder="Número de Teléfono"
         {...register("Número de Teléfono", {
           required: true,
@@ -47,7 +47,7 @@ const FormContactPage = () => {
         })}
       />
       <textarea
-        className="bg-pink-100bg-pink-100 border-2 border-pink-400"
+        className="bg-pink-100 border-2 border-pink-400"
         placeholder="Escriba su mensaje"
         {...register("Mensaje", { required: true, min: 4 })}
       />

@@ -30,7 +30,9 @@ const CartView = () => {
             Seguir Comprando
           </Link>
           <hr />
-          <ButtonRose onClick={clearCart} className="w-64">Vaciar Carrito</ButtonRose>
+          <ButtonRose onClick={clearCart} className="w-48">Vaciar Carrito</ButtonRose>
+          <hr />
+          <ButtonRose className="w-48"><Link to="/checkout">Finalizar Compra</Link></ButtonRose>
         </div>
         <ul>
           {cart.map((item) => (

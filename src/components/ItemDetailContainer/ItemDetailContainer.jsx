@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react"
-import {collection,getDoc,doc} from "firebase/firestore" 
+import {getDoc,doc} from "firebase/firestore" 
 import {db} from "../../firebase/config"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
@@ -29,10 +29,3 @@ getDoc(docRef)
 }
 
 export default ItemDetailContainer 
-
-
-
-/* pedirDatos().then((data) => {
-  console.log("data ", data)
-setItem(data.find(prod => prod.id === Number(itemId)))
-}) */

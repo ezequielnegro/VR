@@ -6,9 +6,6 @@ import { CartContext } from "../../context/CartContext"
 import Successful from "./Successful"
 
 
-
-
-
 const CheckoutForm = () => {
 
     const { cart, priceCart,clearCart } = useContext(CartContext)
@@ -34,7 +31,7 @@ const CheckoutForm = () => {
           total: priceCart(),
           fecha: new Date(),
         }
-           
+
         const ordersRef = collection(db, 'orders')
  //cambia el stock de la base       
         cart.forEach(item => {
@@ -42,7 +39,7 @@ const CheckoutForm = () => {
             getDoc(docRef)
                 .then(doc=>{
                     updateDoc(docRef,{
-                        stock: doc.data().stock- item.cantidad
+                        stock: doc.data().stock - item.cantidad
                     })
                 })
         })

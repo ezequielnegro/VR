@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import {collection,addDoc,getDoc, updateDoc,doc}  from "firebase/firestore"
+import { db } from "../../firebase/config"
 
 const FormContactPage = () => {
   const {
@@ -7,8 +9,34 @@ const FormContactPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log("errores", errors);
+const[commentsId, setCommentsId] = useState(null)
+
+  const commentsRef = collection(db, 'comments')
+  const onSubmit = (data) => { 
+    console.log(data);
+    console.log("errores", errors);
+    const comments = {
+      nombre:data.nombre,
+      apellido:data.apellido,
+      email:data.email,
+      telefono:data.telefono,
+      mensaje:data.mensaje,
+      fecha:new Date()
+    }
+    addDoc(commentsRef , comments)
+    .then(doc => setCommentsId(doc.id))
+    
+  } 
+  
+  if (commentsId) {
+    return(
+      <div>Comentario enviado</div>
+    )
+  }
+  
+ 
+
+
 
   return (
     <form
@@ -19,7 +47,7 @@ const FormContactPage = () => {
         type="text"
         className="bg-pink-100 border-2 border-pink-400"
         placeholder="Nombre"
-        {...register("Nombre", {
+        {...register("nombre", {
           required: true,
           maxLength: 80,
         })}
@@ -28,19 +56,19 @@ const FormContactPage = () => {
         type="text"
         className="bg-pink-100  border-2 border-pink-400"
         placeholder="Apellido"
-        {...register("Apellido", { required: true, maxLength: 100 })}
+        {...register("apellido", { required: true, maxLength: 100 })}
       />
       <input
         type="text"
         className="bg-pink-100  border-2 border-pink-400"
         placeholder="Email"
-        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
       />
       <input
         type="tel"
         className="bg-pink-100 border-2 border-pink-400"
         placeholder="Número de Teléfono"
-        {...register("Número de Teléfono", {
+        {...register("telefono", {
           required: true,
           minLength: 6,
           maxLength: 12,
@@ -49,9 +77,9 @@ const FormContactPage = () => {
       <textarea
         className="bg-pink-100 border-2 border-pink-400"
         placeholder="Escriba su mensaje"
-        {...register("Mensaje", { required: true, min: 4 })}
+        {...register("mensaje", { required: true, min: 4 })}
       />
-      <input type="reset" value="Enviar" className="bg-pink-400 " />
+      <input type="submit" value="Enviar" className="bg-pink-400 " />
     </form>
   );
 };

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import {collection,addDoc,getDoc, updateDoc,doc}  from "firebase/firestore"
+import {collection,addDoc}  from "firebase/firestore"
 import { db } from "../../firebase/config"
-import { Link } from "react-router-dom";
 
 const FormContactPage = () => {
   const {
@@ -21,15 +20,12 @@ const commentsRef = collection(db, 'comments')
     addDoc(commentsRef , comments)
     .then(doc => setCommentsId(doc.id)) 
   } 
- 
-    
+   
   if (commentsId) {
     return(
       <>
-            <div>Comentario enviado</div>
-
+      <div>Comentario enviado</div>
       </>
-
     )
   }
 

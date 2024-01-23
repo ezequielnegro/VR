@@ -1,6 +1,7 @@
 import FormContactPage from "./FormContactPage";
 
 const ContactPage = () => {
+
   return (
     <>
       <div className="flex justify-center mt-16">

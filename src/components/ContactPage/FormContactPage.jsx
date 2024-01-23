@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import {collection,addDoc,getDoc, updateDoc,doc}  from "firebase/firestore"
 import { db } from "../../firebase/config"
+import { Link } from "react-router-dom";
 
 const FormContactPage = () => {
   const {
@@ -9,43 +10,37 @@ const FormContactPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-const[commentsId, setCommentsId] = useState(null)
+const[commentsId, setCommentsId] = useState()
+const commentsRef = collection(db, 'comments')
 
-  const commentsRef = collection(db, 'comments')
   const onSubmit = (data) => { 
-    console.log(data);
-    console.log("errores", errors);
     const comments = {
-      nombre:data.nombre,
-      apellido:data.apellido,
-      email:data.email,
-      telefono:data.telefono,
-      mensaje:data.mensaje,
+      ...data,
       fecha:new Date()
     }
     addDoc(commentsRef , comments)
-    .then(doc => setCommentsId(doc.id))
-    
+    .then(doc => setCommentsId(doc.id)) 
   } 
-  
+ 
+    
   if (commentsId) {
     return(
-      <div>Comentario enviado</div>
+      <>
+            <div>Comentario enviado</div>
+
+      </>
+
     )
   }
-  
- 
-
-
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex justify-center flex-col gap-4 w-96"
+      className="flex justify-center flex-col gap-4 w-72"
     >
       <input
         type="text"
-        className="bg-pink-100 border-2 border-pink-400"
+        className="bg-pink-100 border-b-2 border-pink-400"
         placeholder="Nombre"
         {...register("nombre", {
           required: true,
@@ -54,19 +49,19 @@ const[commentsId, setCommentsId] = useState(null)
       />
       <input
         type="text"
-        className="bg-pink-100  border-2 border-pink-400"
+        className="bg-pink-100  border-b-2 border-pink-400"
         placeholder="Apellido"
         {...register("apellido", { required: true, maxLength: 100 })}
       />
       <input
         type="text"
-        className="bg-pink-100  border-2 border-pink-400"
+        className="bg-pink-100  border-b-2 border-pink-400"
         placeholder="Email"
         {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
       />
       <input
         type="tel"
-        className="bg-pink-100 border-2 border-pink-400"
+        className="bg-pink-100 border-b-2 border-pink-400"
         placeholder="Número de Teléfono"
         {...register("telefono", {
           required: true,
@@ -75,7 +70,7 @@ const[commentsId, setCommentsId] = useState(null)
         })}
       />
       <textarea
-        className="bg-pink-100 border-2 border-pink-400"
+        className="bg-pink-100 border-b-2 border-pink-400"
         placeholder="Escriba su mensaje"
         {...register("mensaje", { required: true, min: 4 })}
       />
